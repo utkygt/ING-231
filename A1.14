@@ -1,0 +1,9 @@
+import math
+minus=0
+preminus=0
+new=0
+for a in range(100000,400000):
+    a=str(a)
+    if int(a[0]+a[1]+a[2])*int(a[3]+a[4]+a[5])==121212:
+        minus=abs(int(a[0]+a[1]+a[2])-int(a[3]+a[4]+a[5]))
+print(minus)
