@@ -1,0 +1,8 @@
+yazi=input("bir şeyler yaz :")
+yazi=yazi.split(" ")
+
+for i in range(0,len(yazi)):
+    if yazi[i]==(" "):
+        yazi.remove(yazi[i])
+yazi="".join(yazi)
+print(yazi)
