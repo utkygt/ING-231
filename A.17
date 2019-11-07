@@ -1,0 +1,12 @@
+sayi = input("3 veya 4 basamakli sayi gir: ")
+if int(sayi)>99 and int(sayi)<1000:
+    if sayi[0]==sayi[2]:
+        print("bu sayi palindromik")
+    else:
+        print("palindromik değil")
+elif int(sayi)>999 and int(sayi)<10000:
+    if sayi[0]+sayi[1]==sayi[3]+sayi[2]:
+        print("bu sayi palindromik")
+    else:
+        print("palindromik değil")
+        
