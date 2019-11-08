@@ -1,0 +1,35 @@
+import random
+sayi=str(random.randint(10,98))
+def main():
+    tutulan_sayi=input("Bir sayi giriniz: ")
+    dogruyer=0
+    yanlisyer=0
+    if int(tutulan_sayi) >= 10 and int(tutulan_sayi) <= 98:
+        while tutulan_sayi != sayi:
+            if int(tutulan_sayi) >= 10 and int(tutulan_sayi) <= 98:
+                if tutulan_sayi[0] == sayi[0] or tutulan_sayi[1] == sayi[1]:
+                    dogruyer=dogruyer+1
+                    print("dogruyer= ",dogruyer)
+                    tutulan_sayi=input("Bir sayi giriniz: ")
+                elif tutulan_sayi[0] == sayi[1] or tutulan_sayi[1] == sayi[0]:
+                    yanlisyer=yanlisyer+1
+                    print("yanlisyer= ",yanlisyer)
+                    tutulan_sayi=input("Bir sayi giriniz: ")
+                elif int(tutulan_sayi) < 10 or int(tutulan_sayi) > 98:
+                    print("10 ile 98 arasında olmali")
+                    tutulan_sayi=input("Bir sayi giriniz: ")
+                    main()
+                else:
+                    tutulan_sayi=input("Bir sayi giriniz: ")
+            elif int(tutulan_sayi) < 10 or int(tutulan_sayi) > 98:
+                tutulan_sayi=input("10 ile 98 arasında olmali: ")
+                main()
+        print("Tebrikler! Doğru bildiniz!")
+    elif int(tutulan_sayi) < 10 or int(tutulan_sayi) > 98:
+        tutulan_sayi=input("10 ile 98 arasında olmali: ")
+        main()
+main()
+
+
+
+    
