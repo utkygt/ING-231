@@ -9,11 +9,11 @@ def main():
         while tutulan_sayi != sayi:
             if int(tutulan_sayi) >= 10 and int(tutulan_sayi) <= 98:
                 if tutulan_sayi[0] == sayi[0] or tutulan_sayi[1] == sayi[1]:
-                    dogruyer=dogruyer+1
+                    dogruyer=1
                     print("dogruyer= ",dogruyer)
                     tutulan_sayi=input("Bir sayi giriniz: ")
                 elif tutulan_sayi[0] == sayi[1] or tutulan_sayi[1] == sayi[0]:
-                    yanlisyer=yanlisyer+1
+                    yanlisyer=1
                     print("yanlisyer= ",yanlisyer)
                     tutulan_sayi=input("Bir sayi giriniz: ")
                 else:
