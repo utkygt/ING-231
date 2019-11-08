@@ -1,8 +1,6 @@
 import random
 sayi=str(random.randint(10,98))
-
 def main():
-    print(sayi)
     tutulan_sayi=input("Bir sayi giriniz: ")
     dogruyer=0
     yanlisyer=0
@@ -26,8 +24,6 @@ def main():
     elif int(tutulan_sayi) < 10 or int(tutulan_sayi) > 98:
         print("DİKKAT! 10 ile 98 arasında bir sayi olmalı!")
         main()
-
-
 main()
 
 
