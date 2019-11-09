@@ -1,0 +1,9 @@
+def fib(n):
+    if n <= 1:
+        return 1
+    if n>1 and n<=30:
+        return(fib(n-1)+fib(n-2))
+
+print("Fibonacci dizisi: ")   
+for i in range(0,30):
+    print(fib(i),end=" ")
