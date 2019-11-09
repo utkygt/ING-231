@@ -1,0 +1,5 @@
+def toplam(N):
+    if N==0:
+        return(0)
+    else:
+        return(N+toplam(N-1))
