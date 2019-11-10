@@ -1,10 +1,8 @@
 def asal(sayi):
     if sayi==1:
         return False
-
     if sayi==2:
         return True
-
     count=0
     for i in range(2,sayi):
         if sayi%i==0:
@@ -14,17 +12,16 @@ def asal(sayi):
     else:
         return False
 
+def superAsal(nbr):
+    if asal(nbr):
+        while len(list(str(nbr)))!=1:
+            liste=list(str(nbr))
+            del liste[-1]
+            return superAsal(int(("").join(liste)))
+        return True
+    else:
+        return False
 
-def superAsal(sayi):
-    if asal(sayi)==True:
-        sayi=str(sayi)
-        list_sayi=list(sayi)
-        if asal(int(list_sayi[len(list_sayi)-1]))==True:
-            list_sayi=list_sayi.remove(list_sayi[len(list_sayi)-1])
-            return superAsal(int("".join(list_sayi))
-    
-
-                             
-for i in range(10000,99999):
-    print(superAsal(i),end=" ")            
-            
+for i in range(23000,99999):
+    if superAsal(i):
+        print(i,end=",")
