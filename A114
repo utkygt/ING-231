@@ -11,4 +11,3 @@ for a in range(100000,400000):
         x=b
         y=c
 print(x,y)
-
