@@ -4,6 +4,11 @@ preminus=0
 new=0
 for a in range(100000,400000):
     a=str(a)
-    if int(a[0]+a[1]+a[2])*int(a[3]+a[4]+a[5])==121212:
-        minus=abs(int(a[0]+a[1]+a[2])-int(a[3]+a[4]+a[5]))
-print(minus)
+    b=a[0]+a[1]+a[2]
+    c=a[3]+a[4]+a[5]
+    if int(b)*int(c)==121212:
+        minus=abs(int(b)-int(c))
+        x=b
+        y=c
+print(x,y)
+
