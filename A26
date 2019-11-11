@@ -1,0 +1,21 @@
+import math
+liste=input("dizi elemanlarini aralarinda boşlukla giriniz: ")
+liste=liste.split(" ")
+sayi=input("Aradiginiz sayiyi giriniz: ")
+orta=math.ceil((len(liste)-1)/2)
+ortasayi=liste[orta]
+alt=0
+ust=orta
+while int(ortasayi)!=int(sayi):
+    if int(ortasayi)>int(sayi):
+        ust=ust-1
+        orta=math.floor((ust+alt)/2)
+        alt=alt+1
+        ortasayi=liste[orta]
+    elif int(ortasayi)<int(sayi):
+        orta=math.ceil((ust+alt)/2)
+        alt=alt+1
+        ortasayi=liste[orta]
+    elif orta==0:
+        pass
+print (sayi,"sayisi dizide",orta+1,". sirada bulunuyor.")
