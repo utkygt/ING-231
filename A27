@@ -1,0 +1,12 @@
+def ikiliArama(liste,sayi):
+        import math
+        orta=math.ceil((len(liste)-1)/2)
+        ortasayi=liste[orta]
+        if int(ortasayi)!=int(sayi):
+            return False
+            if int(ortasayi)>int(sayi):
+                return ikiliArama(liste[:orta],sayi)
+            elif int(ortasayi)<int(sayi):
+                return ikiliArama(liste[orta:],sayi)
+        elif int(ortasayi)==int(sayi):
+                 return True
