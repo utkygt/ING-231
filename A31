@@ -1,0 +1,7 @@
+def stupidSort(liste):
+    for i in range(0,len(liste)-1):
+        if int(liste[i])>int(liste[i+1]):
+            a=liste[i]
+            liste[i]=liste[i+1]
+            liste[i+1]=a
+            return stupidSort(liste)
