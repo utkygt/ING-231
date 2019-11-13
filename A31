@@ -1,0 +1,26 @@
+yigin=[]
+
+def yiginaBilgiAt(n):
+    global yigin
+    yigin.append(n)
+
+def yigindanBilgiCek():
+    global yigin
+    if len(yigin)==0:
+        print("yigin zaten bostur")
+    else:
+        print(yigin[len(yigin)-1])
+        print(yigin[0:len(yigin)-1])
+
+yigindanBilgiCek()
+yiginaBilgiAt(5)
+print(yigin)
+yiginaBilgiAt(1)
+print(yigin)
+yiginaBilgiAt(7)
+print(yigin)
+yiginaBilgiAt(9)
+print(yigin)
+
+yigindanBilgiCek()
+print(yigin)
