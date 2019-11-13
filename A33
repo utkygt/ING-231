@@ -4,4 +4,5 @@ def gnomeSort(liste):
             a=liste[i]
             liste[i]=liste[i+1]
             liste[i+1]=a
+            liste=liste[i:]
             return gnomeSort(liste)
