@@ -1,0 +1,29 @@
+def zar_at(a):
+    import random
+    zar1=random.randint(1,6)
+    zar2=random.randint(1,6)
+    a=[zar1,zar2,zar1+zar2]
+    return a
+
+def sonuc(a,b,c):
+    print("İlk zar:",a,end="\n")
+    print("İkinci zar:",b,end="\n")
+    print("Toplam:",c,end="\n\n")
+
+def oyun():
+    zar=zar_at([])
+    toplam1=zar[2]
+    sonuc(zar[0],zar[1],zar[2])
+    if zar[2]==7 or zar[2]==11:
+        print("kazandin")
+    elif zar[2]==2 or zar[2]==3 or zar[2]==8:
+        print("kaybettin")
+    else:
+        while zar[2]!=7:
+            zar=zar_at([])
+            sonuc(zar[0],zar[1],zar[2])
+            if zar[2]==toplam1:
+                print("kazandin")
+        print("kaybettin")
+
+oyun()
