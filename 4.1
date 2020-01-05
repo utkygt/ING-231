@@ -1,0 +1,37 @@
+# Tek Alfabeli Yerine Yerleştirme Şifreleme Algoritması
+
+import random
+
+def sifrele(s,kural):
+    kripto=""
+    global alfabe
+    for i in range(0,len(s)):
+        n=alfabe.index(s[i])
+        kripto=kripto+kural[n]
+    return kripto
+
+def sifreyiCoz(s,kural):
+    metin=""
+    global alfabe
+    for i in range(0,len(s)):
+        n=kural.index(s[i])
+        metin=metin+alfabe[n]
+    return metin
+
+s="bugünhavaçokgüzel"
+alfabe="abcçdefgğhıijklmnoöprsştuüvyz"
+alfabe2=alfabe
+kural=""
+j=28
+while j>=0:
+   n=random.randint(0,j)
+   kural=kural+alfabe2[n]
+   alfabe2=alfabe2[0:n]+alfabe2[n+1:len(alfabe2)]
+   j=j-1
+print(alfabe)
+print(kural)
+sifrelenmisMetin=sifrele(s,kural)
+print(s)
+print(sifrelenmisMetin)
+orijinalMetin=sifreyiCoz(sifrelenmisMetin,kural)
+print(orijinalMetin)
