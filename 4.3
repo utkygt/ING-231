@@ -1,0 +1,120 @@
+# Sezar ın Kutu Şifresinin İyileştirilmiş Versiyonu
+
+import math
+
+def sifrele(s,anahtar):
+    kripto=""
+    global alfabe
+    indis=[]
+    for i in range(0,len(anahtar)):
+        indis.append(0)
+    k=0
+    for i in range(0,len(alfabe)):
+        for j in range(0,len(anahtar)):
+            if(alfabe[i]==anahtar[j]):
+                indis[j]=k
+                k=k+1
+    print(indis)
+    sutunSayisi=len(anahtar)
+    satirSayisi=int(len(s)/sutunSayisi)
+    if satirSayisi*sutunSayisi<len(s):
+        satirSayisi=satirSayisi+1
+    matris=[]
+    for i in range(0,satirSayisi):
+        satir=[]
+        for i in range(0,sutunSayisi):
+            satir.append(".")
+        matris.append(satir)
+    i=0
+    j=0
+    k=0
+    for k in range(0,len(s)):
+        matris[i][j]=s[k]
+        j=j+1
+        if j==sutunSayisi:
+            i=i+1
+            j=0
+    for k in range(0,satirSayisi):
+        print(matris[k])
+    for i in range(0,sutunSayisi):
+        for j in range(satirSayisi):
+            k=indis.index(i)
+            if matris[j][k]!=".":
+                kripto=kripto+matris[j][k]
+    return kripto
+
+def sifreyiCoz(s,anahtar):
+    orijinalMetin=""
+    global alfabe
+    indis=[]
+    for i in range(0,len(anahtar)):
+        indis.append(0)
+    k=0
+    for i in range(0,len(alfabe)):
+        for j in range(0,len(anahtar)):
+            if(alfabe[i]==anahtar[j]):
+                indis[j]=k
+                k=k+1
+    print(indis)
+    sutunSayisi=len(anahtar)
+    satirSayisi=int(len(s)/sutunSayisi)
+    if satirSayisi*sutunSayisi<len(s):
+        satirSayisi=satirSayisi+1
+    matris=[]
+    for i in range(0,satirSayisi):
+        satir=[]
+        for i in range(0,sutunSayisi):
+            satir.append(".")
+        matris.append(satir)
+    for i in range(0,satirSayisi):
+        for j in range(0,sutunSayisi):
+            if(i*sutunSayisi+j+1<=len(s)):
+               matris[i][j]="X"
+    i=0
+    j=0
+    k=0
+    t=0
+    while (t<len(s)):
+        k=indis.index(i)
+        if matris[j][k]=="X":
+            matris[j][k]=s[t]
+            t=t+1
+        j=j+1
+        if j==satirSayisi:
+            i=i+1
+            j=0      
+    for k in range(0,satirSayisi):
+        print(matris[k])
+    i=0
+    j=0
+    while i<satirSayisi:
+        if matris[i][j]!=".":
+            orijinalMetin=orijinalMetin+matris[i][j]
+        j=j+1
+        if j==sutunSayisi:
+            i=i+1
+            j=0
+    return orijinalMetin
+
+orijinalMetin="bugünhavaçokgüzel"
+alfabe="abcçdefgğhıijklmnoöprsştuüvyz"
+anahtar="merhaba"
+sifrelenmisMetin=sifrele(orijinalMetin,anahtar)
+print(orijinalMetin)
+print(sifrelenmisMetin)
+orijinalMetin=sifreyiCoz(sifrelenmisMetin,anahtar)
+print(orijinalMetin)
+
+"""
+[5, 3, 6, 4, 0, 2, 1]
+['b', 'u', 'g', 'ü', 'n', 'h', 'a']
+['v', 'a', 'ç', 'o', 'k', 'g', 'ü']
+['z', 'e', 'l', '.', '.', '.', '.']
+bugünhavaçokgüzel
+nkaühguaeüobvzgçl
+[5, 3, 6, 4, 0, 2, 1]
+['b', 'u', 'g', 'ü', 'n', 'h', 'a']
+['v', 'a', 'ç', 'o', 'k', 'g', 'ü']
+['z', 'e', 'l', '.', '.', '.', '.']
+bugünhavaçokgüzel
+"""
