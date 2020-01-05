@@ -1,0 +1,47 @@
+# Vigenere Şifresi
+
+def sifrele(sifrelenecekMetin,anahtar):
+    kripto=""
+    anahtarUzunlugu=len(anahtar)
+    global alfabe
+    k=0
+    for i in range(0,len(sifrelenecekMetin)):
+        m1=alfabe.index(sifrelenecekMetin[i])
+        m2=alfabe.index(anahtar[k])
+        m=(m1+m2)%29
+        k=(k+1)%(anahtarUzunlugu)
+        kripto=kripto+alfabe[m]
+    return kripto
+
+def sifreyiCoz(sifrelenmisMetin,anahtar):
+    metin=""
+    anahtarUzunlugu=len(anahtar)
+    global alfabe
+    k=0
+    for i in range(0,len(sifrelenmisMetin)):
+        m1=alfabe.index(sifrelenmisMetin[i])
+        m2=alfabe.index(anahtar[k])
+        m=(m1-m2+29)%29
+        k=(k+1)%(anahtarUzunlugu)
+        metin=metin+alfabe[m]
+    return metin
+
+s="bugünhavaçokgüzel"
+alfabe="abcçdefgğhıijklmnoöprsştuüvyz"
+anahtar="merhaba"
+
+print(s)
+print(anahtar)
+sifrelenmisMetin=sifrele(s,anahtar)
+print(sifrelenmisMetin)
+orijinalMetin=sifreyiCoz(sifrelenmisMetin,anahtar)
+print(orijinalMetin)
+
+"""
+PROGRAMIN ÇIKTISI:
+
+bugünhavaçokgüzel
+merhaba
+nayenıajetvkğülıe
+bugünhavaçokgüzel
+"""
